@@ -7,7 +7,7 @@ function dbHandler(){
 		var favoriteList = new Array();
 		var userFavorites = this.getUser(userId).userFavorites;		
 				for(var listItem in userFavorites) {
-					favoriteList.add(this.getUser(userFavorites[listItem]));					
+					favoriteList.push(this.getUser(userFavorites[listItem]));					
 		}
 		return favoriteList;
 	};
@@ -16,7 +16,7 @@ function dbHandler(){
 		var favoriteList = new Array();
 		var userFavorites = this.getUser(userId).favoriteGroceries;		
 				for(var listItem in userFavorites) {
-					favoriteList.add(this.getGrocery(userFavorites[listItem]));					
+					favoriteList.push(this.getGrocery(userFavorites[listItem]));					
 		}
 		return favoriteList;
 	};
@@ -25,7 +25,7 @@ function dbHandler(){
 		var recentList = new Array();
 		var userRecents = this.getUser(userId).recentBoughtGroceries;		
 				for(var listItem in userRecents) {
-					recentList.add(this.getGrocery(userRecents[listItem]));					
+					recentList.push(this.getGrocery(userRecents[listItem]));					
 		}
 		return recentList;
 	};
@@ -34,7 +34,7 @@ function dbHandler(){
 		var favoriteList = new Array();
 		var userFavorites = this.getUser(userId).userFavorites;		
 				for(var listItem in userFavorites) {
-					favoriteList.add(this.getUser(userFavorites[listItem]));					
+					favoriteList.push(this.getUser(userFavorites[listItem]));					
 		}
 		return favoriteList;
 	};
