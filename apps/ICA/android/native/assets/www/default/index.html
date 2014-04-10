@@ -38,22 +38,24 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.4.min.js" type="text/javascript"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.12/jquery-ui.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-	$(function() {
-		var db = new dbHandler();
-		var allProducts = new Array();
-		var groceries = db.getAllGroceries();
-		console.log(groceries);
-		for ( var product in groceries) {
-			allProducts.push(groceries[product].category);
-		}
-		$("#tags").autocomplete({
-			source : allProducts
-		});
-	});
+	/**
+	 $('#addpage').live('pageinit', function() {
+	 var db = new dbHandler();
+	 var allProducts = new Array();
+	 var groceries = db.getAllGroceries();
+	 console.log(groceries);
+	 for ( var product in groceries) {
+	 allProducts.push(groceries[product].category);
+	 }
+	 $("#tags").autocomplete({
+	 source : allProducts
+	 });
+	 });
+	 **/
 </script>
     </head>
     <body style="display: none;">
-        <div data-role="page" id="page">
+        <div data-role="page" id="loginpage">
             <div data-role="content" style="padding: 15px">
                 <h1>ICA DEJT</h1>
                 <table>
@@ -68,16 +70,327 @@
                         </tr>
                     </tbody>
                 </table>
-                <form action="add.html" method="get">
-                    <input type="submit" value="Submit">
-                </form>
+                <a class="ui-btn ui-corner-all ui-btn-inline" data-transition="slide" href="#addpage">Login</a>
             </div>
         </div>
-        <script src="js/initOptions.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/messages.js"></script>
-	<script src="js/add.js"></script>
-	<script src="db/dbHandler.js"></script>
-	<script src="db/db.js"></script>
+        <div data-role="page" id="chatpage">
+            <div data-role="header" style="width: 100%;">
+                <div data-mini="true" data-role="collapsible">
+                    <h4>Menu</h4>
+                    <ul data-role="listview">
+                        <li>
+                            <a href="#profilepage">Profile</a>
+                        </li>
+                        <li>
+                            <a href="#addpage">Add</a>
+                        </li>
+                        <li>
+                            <a href="#listpage">List</a>
+                        </li>
+                        <li>
+                            <a href="#datefeedpage">Datefeed</a>
+                        </li>
+                        <li>
+                            <a href="#chatpage">Chat</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content" style="padding: 15px">
+                <h1>ICA DEJT</h1>
+			<!--application UI goes here-->
+			Chat me up!
+		</div>
+        </div>
+        <div data-role="page" id="datefeedpage">
+            <div data-role="header" style="width: 100%;">
+                <div data-mini="true" data-role="collapsible">
+                    <h4>Menu</h4>
+                    <ul data-role="listview">
+                        <li>
+                            <a href="#profilepage">Profile</a>
+                        </li>
+                        <li>
+                            <a href="#addpage">Add</a>
+                        </li>
+                        <li>
+                            <a href="#listpage">List</a>
+                        </li>
+                        <li>
+                            <a href="#datefeedpage">Datefeed</a>
+                        </li>
+                        <li>
+                            <a href="#chatpage">Chat</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content" style="padding: 15px">
+                <h1>ICA DEJT</h1>
+			<!--application UI goes here-->
+			Wanna date? ;)
+		</div>
+        </div>
+        <div data-role="page" id="listpage">
+            <div data-role="header" style="width: 100%;">
+                <div data-mini="true" data-role="collapsible">
+                    <h4>Menu</h4>
+                    <ul data-role="listview">
+                        <li>
+                            <a href="#profilepage">Profile</a>
+                        </li>
+                        <li>
+                            <a href="#addpage">Add</a>
+                        </li>
+                        <li>
+                            <a href="#listpage">List</a>
+                        </li>
+                        <li>
+                            <a href="#datefeedpage">Datefeed</a>
+                        </li>
+                        <li>
+                            <a href="#chatpage">Chat</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content" style="padding: 15px">
+                <h1>ICA DEJT</h1>
+			<!--application UI goes here-->
+			List stuff!
+			<div id="holder">
+				<!-- Fill with JAVASCRIPT -->
+                </div>
+            </div>
+            <div data-role="footer" style="width: 100%;">
+                <a class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-bottom" href="#" style="float: right; margin-left: 20px;">Finish Shop</a>
+            </div>
+        </div>
+        <div data-role="page" id="profilepage">
+            <div data-role="header" style="width: 100%;">
+                <div data-mini="true" data-role="collapsible">
+                    <h4>Menu</h4>
+                    <ul data-role="listview">
+                        <li>
+                            <a href="#profilepage">Profile</a>
+                        </li>
+                        <li>
+                            <a href="#addpage">Add</a>
+                        </li>
+                        <li>
+                            <a href="#listpage">List</a>
+                        </li>
+                        <li>
+                            <a href="#datefeedpage">Datefeed</a>
+                        </li>
+                        <li>
+                            <a href="#chatpage">Chat</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content" style="padding: 15px">
+                <h1>ICA DEJT</h1>
+			<!--application UI goes here-->
+			This is me Profile!
+		</div>
+        </div>
+        <div data-role="page" id="addpage">
+            <div data-role="header" style="width: 100%;">
+                <div data-mini="true" data-role="collapsible">
+                    <h4>Menu</h4>
+                    <ul data-role="listview">
+                        <li>
+                            <a href="#profilepage">Profile</a>
+                        </li>
+                        <li>
+                            <a href="#addpage">Add</a>
+                        </li>
+                        <li>
+                            <a href="#listpage">List</a>
+                        </li>
+                        <li>
+                            <a href="#datefeedpage">Datefeed</a>
+                        </li>
+                        <li>
+                            <a href="#chatpage">Chat</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content" style="padding: 15px">
+                <h1>ICA DEJT</h1>
+                <table>
+                    <TBODY>
+                        <tr>
+                            <td>
+                                <form>
+                                    <label for="tags">Search:</label> <input id="tags" name="search-1" type="search" value="">
+                                </form>
+                            </td>
+					<td>
+						<button class="ui-btn ui-btn-inline">Button</button>
+					</td>
+                        </tr>
+                    </TBODY>
+                </table>
+                <div class="content divided offer-listing">
+                    <div class="offers loadmorelist loadmorelist-loaded" data-linktext="Fler erbjudanden" id="cardOffers">
+                        <ul>
+                            <li style="min-height: 454px;">
+                                <section class="offer " id="offer_219704">
+                                    <figure class="product-img">
+                                        <img alt="" src="http://www.ica.se/ImageVaultFiles/id_93287/cf_259/Choklad-RTVA-v15-2014.JPG?~93287~Chokladkakor">
+								</figure>
+                                    <div class="wrapper" style="min-height: 139px;">
+                                        <header>
+                                            <strong>Kortpris<span class="iconCard offer-icon" id="ctl00_cphFullArea_cphContainerArea_cphOuter_ctl01_ctl00_headerIconRWD"></span></strong>
+                                            <h3 class="title">Chokladkaka</h3>
+                                        </header>
+                                        <div class="content">
+                                            <p>Marabou. 180-200 g</p>
+                                            <p>Jfr pris 70:00-77:78/kg. G&auml;ller ej hos ICA To Go.</p>
+                                            <strong class="price">2 f&ouml;r 28:-</strong>
+										<!-- render details window & link UNLESS this offer is rendered in a proper list, then we'll render
+                         it inside the footer instead (further down) -->
+                                        </div>
+                                    </div>
+                                    <footer class="">
+                                        <div class="hidden" id="info_219704">
+                                            <p>Priset g&auml;ller 7-13 april 2014. Lokalt kan l&auml;gre priser
+											och avvikelser i sortiment f&ouml;rekomma.</p>
+                                        </div>
+                                    </footer>
+                                </section>
+                            </li>
+                            <hr>
+                            <p></p>
+                            <li style="min-height: 454px;">
+                                <section class="offer " id="offer_219707">
+                                    <figure class="product-img">
+                                        <img alt="" src="http://www.ica.se/ImageVaultFiles/id_93288/cf_259/Kyckling-RTVA-v15-2014.JPG?~93288~Kyckling-RTVA-v15-2014">
+								</figure>
+                                    <div class="wrapper" style="min-height: 139px;">
+                                        <header>
+                                            <strong>Kortpris<span class="iconCard offer-icon" id="ctl00_cphFullArea_cphContainerArea_cphOuter_ctl01_ctl01_headerIconRWD"></span></strong>
+                                            <h3 class="title">Kyckling</h3>
+                                        </header>
+                                        <div class="content">
+                                            <p>Kronf&aring;gel, f&auml;rsk. Sverige. ca 925 g.</p>
+                                            <p>Jfr pris 99:00/kg. G&auml;ller ej hos ICA To Go.</p>
+                                            <strong class="price">99:-/kg</strong>
+										<!-- render details window & link UNLESS this offer is rendered in a proper list, then we'll render
+                         it inside the footer instead (further down) -->
+                                        </div>
+                                    </div>
+                                    <footer class="">
+                                        <div class="hidden" id="info_219707">
+                                            <p>Priset g&auml;ller 7-13 april 2014. Lokalt kan l&auml;gre priser
+											och avvikelser i sortiment f&ouml;rekomma.</p>
+                                        </div>
+                                    </footer>
+                                </section>
+                            </li>
+                            <hr>
+                            <p></p>
+                            <li style="min-height: 454px;">
+                                <section class="offer " id="offer_219708">
+                                    <figure class="product-img">
+                                        <img alt="" src="http://www.ica.se/ImageVaultFiles/id_93289/cf_259/Lax-RTVA-v15-2014.JPG?~93289~Lax">
+								</figure>
+                                    <div class="wrapper" style="min-height: 139px;">
+                                        <header>
+                                            <strong>Kortpris<span class="iconCard offer-icon" id="ctl00_cphFullArea_cphContainerArea_cphOuter_ctl01_ctl02_headerIconRWD"></span></strong>
+                                            <h3 class="title">Laxfil&eacute;</h3>
+                                        </header>
+                                        <div class="content">
+                                            <p>Findus, fryst. 500 g.</p>
+                                            <p>Jfr pris 118:00/kg. G&auml;ller ej hos ICA To Go.</p>
+                                            <strong class="price">59:-</strong>
+										<!-- render details window & link UNLESS this offer is rendered in a proper list, then we'll render
+                         it inside the footer instead (further down) -->
+                                        </div>
+                                    </div>
+                                    <footer class="">
+                                        <div class="hidden" id="info_219708">
+                                            <p>Priset g&auml;ller 7-13 april 2014. Lokalt kan l&auml;gre priser
+											och avvikelser i sortiment f&ouml;rekomma.</p>
+                                        </div>
+                                    </footer>
+                                </section>
+                            </li>
+                            <hr>
+                            <br>
+                            <li style="min-height: 454px;">
+                                <section class="offer " id="offer_219706">
+                                    <figure class="product-img">
+                                        <img alt="" src="http://www.ica.se/ImageVaultFiles/id_93290/cf_259/Milda-RTVA-v15-2014.JPG?~93290~Milda-RTVA-v15-2014">
+								</figure>
+                                    <div class="wrapper" style="min-height: 139px;">
+                                        <header>
+                                            <strong>Kortpris<span class="iconCard offer-icon" id="ctl00_cphFullArea_cphContainerArea_cphOuter_ctl01_ctl03_headerIconRWD"></span></strong>
+                                            <h3 class="title">Margarin</h3>
+                                        </header>
+                                        <div class="content">
+                                            <p>Milda. 1 kg.</p>
+                                            <p>Jfr pris 15:00/kg. G&auml;ller ej hos ICA To Go.</p>
+                                            <strong class="price">15:-</strong>
+										<!-- render details window & link UNLESS this offer is rendered in a proper list, then we'll render
+                         it inside the footer instead (further down) -->
+                                        </div>
+                                    </div>
+                                    <footer class="">
+                                        <div class="hidden" id="info_219706">
+                                            <p>Priset g&auml;ller 7-13 april 2014. Lokalt kan l&auml;gre priser
+											och avvikelser i sortiment f&ouml;rekomma.</p>
+                                        </div>
+                                    </footer>
+                                </section>
+                            </li>
+                            <li style="min-height: 486px;">
+                                <section class="offer " id="offer_219705">
+                                    <figure class="product-img">
+                                        <img alt="" src="http://www.ica.se/ImageVaultFiles/id_93292/cf_259/Stekpanna-RTVA-v15-2014.JPG?~93292~Stekpanna">
+								</figure>
+                                    <div class="wrapper" style="min-height: 171px;">
+                                        <header>
+                                            <strong>Kortpris<span class="iconCard offer-icon" id="ctl00_cphFullArea_cphContainerArea_cphOuter_ctl01_ctl04_headerIconRWD"></span></strong>
+                                            <h3 class="title">Stekpanna</h3>
+                                        </header>
+                                        <div class="content">
+                                            <p>Jamie Oliver Professional Induction. &Oslash;28 cm. F&ouml;r alla
+											spisar inkl. induktion. T&aring;l ugnsv&auml;rme upp till 260&deg;C.</p>
+                                            <p>G&auml;ller ej hos ICA To Go.</p>
+                                            <strong class="price">399:-</strong>
+										<!-- render details window & link UNLESS this offer is rendered in a proper list, then we'll render
+                         it inside the footer instead (further down) -->
+                                        </div>
+                                    </div>
+                                    <footer class="">
+                                        <div class="hidden" id="info_219705">
+                                            <p>Priset g&auml;ller 7-13 april 2014. Lokalt kan l&auml;gre priser
+											och avvikelser i sortiment f&ouml;rekomma.</p>
+                                        </div>
+                                    </footer>
+                                </section>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <footer>
+                    <p>
+					Kolla i din <a href="http://www.ica.se/varor-butiker/sok-butik/">butik</a>
+					f&ouml;r fler erbjudanden.
+				</p>
+                </footer>
+                <section></section>
+            </div>
+            <script src="js/initOptions.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/messages.js"></script>
+		<script src="js/add.js"></script>
+		<script src="db/dbHandler.js"></script>
+		<script src="db/db.js"></script>
+        </div>
     </body>
 </html>
