@@ -6,6 +6,9 @@ function tests(){
 	testGetUser(handler);
 	testGetGrocery(handler);
 	testGetUserFavoriteObjects(handler);
+	testGetUserShoppingList(handler);
+	testAddGroceryToUserShoppingList(handler);
+	testRemoveGroceryFromUserShoppingList(handler);
 }
 
 function testGetAllGroceries(handler){
@@ -35,5 +38,31 @@ function testGetUserFavoriteObjects(handler){
 	console.log(handler.getUserFavoriteObjects(0));
 }
 
+function testGetUserShoppingList(handler){
+	console.log("Runs: testGetUserShoppingList");
+	console.log(handler.getUserShoppingList(0));
+}
+
+function testAddGroceryToUserShoppingList(handler){
+	console.log("Runs: testAddGroceryToUserShoppingList");
+	console.log(handler.getUser(0).shoppingList);
+	console.log("Adds id 5");
+	handler.addGroceryToUserShoppingList(0, 5);
+	console.log(handler.getUser(0).shoppingList);
+	console.log("Adds id 2");
+	handler.addGroceryToUserShoppingList(0, 2);
+	console.log(handler.getUser(0).shoppingList);
+}
+
+function testRemoveGroceryFromUserShoppingList(handler){
+	console.log("testRemoveGroceryFromUserShoppingList");
+	console.log(handler.getUser(0).shoppingList);
+	console.log("Remove id 0");
+	handler.removeGroceryFromUserShoppingList(0, 0);
+	console.log(handler.getUser(0).shoppingList);
+	console.log("Remove id 2");
+	handler.removeGroceryFromUserShoppingList(0, 2);
+	console.log(handler.getUser(0).shoppingList);	
+}
 
 tests();

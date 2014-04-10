@@ -12,14 +12,37 @@ function dbHandler(){
 		return favoriteList;
 	};
 	
-	this.getUserFavoriteGrocery = function(userId){
-		var favoriteList = new Array();
-		var userFavorites = this.getUser(userId).favoriteGroceries;		
-				for(var listItem in userFavorites) {
-					favoriteList.push(this.getGrocery(userFavorites[listItem]));					
+	this.getUserShoppingList = function(userId){
+		var shoppingList = new Array();
+		var userShoppingList = this.getUser(userId).shoppingList;		
+				for(var listItem in userShoppingList) {
+					shoppingList.push(this.getGrocery(userShoppingList[listItem]));					
 		}
-		return favoriteList;
+		return shoppingList;
 	};
+
+	this.addGroceryToUserShoppingList = function(userId, grocId){
+		var shoppingList = this.getUserShoppingList(userId);
+		var exists = false;
+		for(var groc in shoppingList){
+			if(shoppingList[groc].id == grocId){
+				exists = true;
+				break;
+			}
+		}
+		if(!exists){
+			this.getUser(userId).shoppingList.push(grocId);
+		}
+	}
+
+	this.removeGroceryFromUserShoppingList = function(userId, grocId){
+		var shoppingList = this.getUserShoppingList(userId);
+		for(var groc in shoppingList){
+			if(shoppingList[groc].id == grocId){
+				this.getUser(userId).shoppingList.splice(groc,1);		
+			}
+		}
+	}
 	
 	this.getUserRecentGrocery = function(userId){
 		var recentList = new Array();
