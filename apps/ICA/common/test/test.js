@@ -11,6 +11,7 @@ function tests(){
 	testAddGroceryToUserShoppingList(handler);
 	testRemoveGroceryFromUserShoppingList(handler);
 	testMatchUser(matcher);
+	testAddToRecentList(handler);
 }
 
 function testGetAllGroceries(handler){
@@ -70,6 +71,20 @@ function testRemoveGroceryFromUserShoppingList(handler){
 function testMatchUser(matcher){
 	console.log("Run testMatchUser");
 	console.log(matcher.matchUser(0));
+}
+
+function testAddToRecentList(handler){
+	console.log("Run testAddToRecentList");
+	console.log(handler.getUser(0).recentBoughtGroceries);
+	console.log("Add grocery id 5,4,1 to recentList");
+	handler.addToRecentList(0);
+	console.log(handler.getUser(0).recentBoughtGroceries);
+	console.log("Add grocery 3 to shoppingList");
+	handler.addGroceryToUserShoppingList(0, 3);
+	console.log(handler.getUser(0).recentBoughtGroceries);
+	console.log("Add grocery 3 to recentList");
+	handler.addToRecentList(0);
+	console.log(handler.getUser(0).recentBoughtGroceries);
 }
 
 tests();

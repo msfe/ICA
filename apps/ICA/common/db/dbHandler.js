@@ -2,6 +2,7 @@ function dbHandler(){
 	this.db = new FakeDb();
 	this.users = this.db.getUsers();
 	this.groceries = this.db.getGroceries();
+	var util = new Util();
 	
 	this.getUserFavoriteObjects = function(userId){
 		var favoriteList = new Array();
@@ -10,6 +11,25 @@ function dbHandler(){
 					favoriteList.push(this.getUser(userFavorites[listItem]));					
 		}
 		return favoriteList;
+	};
+
+	this.addToRecentList = function(userId) {
+		var MAX = 4;
+		var userShopList = this.getUser(userId).shoppingList;
+		var recentList = this.getUser(userId).recentBoughtGroceries;
+		for(var i in userShopList) {
+			if(util.contains(recentList, userShopList[i])) {
+				var index = recentList.indexOf(userShopList[i]);
+				recentList.splice(index, 1);
+				recentList.splice(0,0,userShopList[i]);
+			}
+			else {
+				recentList.splice(0,0,userShopList[i]);
+				if(recentList.size > MAX) {
+					recentList.pop();
+				}
+			}
+		}
 	};
 	
 	this.getUserShoppingList = function(userId){
@@ -24,13 +44,7 @@ function dbHandler(){
 	this.addGroceryToUserShoppingList = function(userId, grocId){
 		var shoppingList = this.getUserShoppingList(userId);
 		var exists = false;
-		for(var groc in shoppingList){
-			if(shoppingList[groc].id == grocId){
-				exists = true;
-				break;
-			}
-		}
-		if(!exists){
+		if(!util.contains(shoppingList, this.getGrocery(grocId))){
 			this.getUser(userId).shoppingList.push(grocId);
 		}
 	}
