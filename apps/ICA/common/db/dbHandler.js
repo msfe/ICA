@@ -1,7 +1,7 @@
 function dbHandler(){
 	this.db = new FakeDb();
-	this.users = db.getUsers();
-	this.groceries = db.getGroceries;
+	this.users = this.db.getUsers();
+	this.groceries = this.db.getGroceries;
 	
 	this.getUserFavoriteObjects = function(userId){
 		var favoriteList = new Array();
