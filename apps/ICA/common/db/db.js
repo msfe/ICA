@@ -13,7 +13,7 @@ function FakeDb(){
 		[
 			{"uid":"0","firstName":"Robin", "lastName":"Chowdhury", "age":25, "userFavorites":[1,2], "recentBoughtGroceries":[0,1], "shoppingList":[5,1,4]},
 			{"uid":"1","firstName":"Mitra", "lastName":"Khorsand", "age":23, "userFavorites":[0], "recentBoughtGroceries":[0,1], "shoppingList":[5,1,4]},
-			{"uid":"2","firstName":"Martin", "lastName":"Andersen", "age":15, "userFavorites":[0,3], "recentBoughtGroceries":[0,1], "shoppingList":[5,1,4]},
+			{"uid":"2","firstName":"Martin", "lastName":"Andersen", "age":15, "userFavorites":[0,3], "recentBoughtGroceries":[2,1], "shoppingList":[2]},
 			{"uid":"3","firstName":"Mattias", "lastName":"Folke", "age":72, "userFavorites":[2], "recentBoughtGroceries":[0,1], "shoppingList":[5,1,4]}
 		];
 

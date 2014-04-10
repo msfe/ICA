@@ -1,6 +1,7 @@
 
 function tests(){
 	var handler = new dbHandler();
+	var matcher = new Matcher(handler);
 	testGetAllGroceries(handler);
 	testGetAllUsers(handler);
 	testGetUser(handler);
@@ -9,6 +10,7 @@ function tests(){
 	testGetUserShoppingList(handler);
 	testAddGroceryToUserShoppingList(handler);
 	testRemoveGroceryFromUserShoppingList(handler);
+	testMatchUser(matcher);
 }
 
 function testGetAllGroceries(handler){
@@ -55,7 +57,7 @@ function testAddGroceryToUserShoppingList(handler){
 }
 
 function testRemoveGroceryFromUserShoppingList(handler){
-	console.log("testRemoveGroceryFromUserShoppingList");
+	console.log("Runs: testRemoveGroceryFromUserShoppingList");
 	console.log(handler.getUser(0).shoppingList);
 	console.log("Remove id 0");
 	handler.removeGroceryFromUserShoppingList(0, 0);
@@ -63,6 +65,11 @@ function testRemoveGroceryFromUserShoppingList(handler){
 	console.log("Remove id 2");
 	handler.removeGroceryFromUserShoppingList(0, 2);
 	console.log(handler.getUser(0).shoppingList);	
+}
+
+function testMatchUser(matcher){
+	console.log("Run testMatchUser");
+	console.log(matcher.matchUser(0));
 }
 
 tests();
